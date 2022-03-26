@@ -1,9 +1,7 @@
 package com.example.blackjack.service;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -123,6 +121,7 @@ public class Games {
 		dealer.getDecks().clear();
 		deck = new Decks(3);
 		placeBet(bet);
+		shuffle();
 		playerDraw();
 		playerDraw();
 		DealerDraw();
@@ -135,6 +134,7 @@ public class Games {
 	}
 	
 	public void hardRest(int betAmount) {
+		restart();
 		start(betAmount);
 	}
 	

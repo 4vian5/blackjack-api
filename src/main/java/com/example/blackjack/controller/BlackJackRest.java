@@ -65,7 +65,7 @@ public class BlackJackRest {
 	public String setBet(@RequestBody String req) throws JsonMappingException, JsonProcessingException {
 		 map = mapper.readValue(req, Map.class);
 		 if(map.containsKey("betAmount")) {
-			 game.changeBet(Integer.valueOf(map.get("betAmount")));
+			 game.changeBet(Integer.parseInt(map.get("betAmount")));
 			 return "{\"success\" : true }";		 
 		 }		 
 		 else
@@ -87,7 +87,7 @@ public class BlackJackRest {
 	public String depositBalance(@RequestBody String req) throws JsonMappingException, JsonProcessingException {
 		 map = mapper.readValue(req, Map.class);
 		 if(map.containsKey("amount")) {
-			 game.deposit(Integer.valueOf(map.get("amount")));
+			 game.deposit(Integer.parseInt(map.get("amount")));
 			 return "{\"success\" : true }";		 
 		 }		 
 		 else
